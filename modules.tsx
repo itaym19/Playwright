@@ -1,3 +1,5 @@
+import { resolve } from "node:dns";
+
 export type field = { name: string; type: string };
 
 //function that returns array of page input fields
@@ -19,3 +21,6 @@ export function isValidEmail(email: string): boolean {
   return emailRegex.test(email);
 }
 
+export function isValidUrl(urlString: string): boolean {
+  return URL.canParse(urlString);
+}
